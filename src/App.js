@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -6,11 +6,11 @@ import About from "./Components/About";
 import Contact from "./Components/Contacts";
 import Error from "./Components/error";
 import RestaurantMenu from "./Components/Restaurant";
-//import { useRouteError } from "react-router-dom";
-//   <h3> {err.status}: {err.statusText}</h3>
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+//import Grocery from "./Components/Grocery";
 
-//resName="KFC" cuisine="Burger,Fast Food"
+const Grocery = lazy(() => import("./Components/Grocery"));
+
 const Applayout = () => {
   return (
     <div className="app">
@@ -37,12 +37,16 @@ const appRouter = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      {
+        path: "/grocery",
+        element: <Grocery />,
+      },
+      {
+        path: "/restaurant/:resId",
+        element: <RestaurantMenu />,
+      },
     ],
     errorElement: <Error />,
-  },
-  {
-    path: "/restaurant/:resId",
-    element: <RestaurantMenu />,
   },
 ]);
 
