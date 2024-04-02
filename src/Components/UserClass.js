@@ -24,6 +24,7 @@ class UserClass extends React.Component {
     });
     console.log(json);
   }
+
   componentWillUnmount() {
     console.log("ComponentWillUnmount");
   }
