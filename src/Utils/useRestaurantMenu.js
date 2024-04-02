@@ -17,4 +17,6 @@ const useRestaurantMenu = (resId) => {
 
   return resInfo;
 };
+
+//resInfo is local var. for tis component
 export default useRestaurantMenu;
