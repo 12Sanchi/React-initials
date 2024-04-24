@@ -11,22 +11,22 @@ class UserClass extends React.Component {
         avatar_url: "http://dummy.photo.com",
       },
     };
-    console.log(this.props.name + "Child Constructor");
+    // console.log(this.props.name + "Child Constructor");
   }
 
   async componentDidMount() {
-    console.log(this.props.name + "Child Component Did mount");
+    //  console.log(this.props.name + "Child Component Did mount");
     const data = await fetch("https://api.github.com/users/12Sanchi");
     const json = await data.json();
 
     this.setState({
       userInfo: json,
     });
-    console.log(json);
+    // console.log(json);
   }
 
   componentWillUnmount() {
-    console.log("ComponentWillUnmount");
+    // console.log("ComponentWillUnmount");
   }
 
   render() {
