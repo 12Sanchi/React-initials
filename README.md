@@ -34,4 +34,18 @@
 15.Https - parcel also gives u a way to host your app on https suppose i only want to test on ssh https
 16.Tree shaking algo- suppose we hacve 100 f(n) in our code but using only 4-5 f(n ) ,parcel will tree shake your files,parcel will--remove unused codes for uh
 
-const resData = {
+# Setting up Testing in our app
+
+-Install React Testing Library
+\_install jest in our app
+-imstall babel dependencies
+-configure babel by copy/v (i think by clicking outside)
+-go to parcel depend.
+-create a .parcelrc file as root file by clicking outside and copy,paste codes
+-Configure Parcel Config File to disable a deault Babel transpilation
+-Jest Configuration
+why jsdom(browser-like) we choose?-when u run testcases so there is no server running,there is no browser,thsees testc.will not run on br.not run on googlechrome,so they will need a environment to run,a runtime to run where these testing code will be executed.
+It is not a browser but like a browser which will give u the feautures of browsers
+
+-Jest-npx jest -init
+-As we r using jest version above han 28 we have to install a library
