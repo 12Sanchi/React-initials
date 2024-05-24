@@ -49,3 +49,5 @@ It is not a browser but like a browser which will give u the feautures of browse
 
 -Jest-npx jest -init
 -As we r using jest version above han 28 we have to install a library
+-Install @babel/preset-react-to make jsx work in testcases
+-Install @babel/preset-react inside my babel configuration
