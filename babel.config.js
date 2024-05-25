@@ -1,9 +1,30 @@
 module.exports = {
   presets: [
     ["@babel/preset-env", { targets: { node: "current" } }],
+    ["@babel/preset-react", { runtime: "automatic" }],
+  ],
+};
+
+/*module.exports = {
+  presets: [
+    ["@babel/preset-env", { targets: { node: "current" } }],
     [("@babel/preset-react", { runtime: "automatic" })],
   ],
 };
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "*.{js,mjs,jsx,cjs,ts,tsx}": [
+      "@parcel/transformer-js",
+      "@parcel/transformer-react-refresh-wrap"
+    ]
+  }
+}
+
+
+
+
+*/
 
 {
   /* if u want this configuration to work and not what parcel bydefault uses 
