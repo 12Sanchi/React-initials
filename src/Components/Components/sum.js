@@ -1,7 +1,7 @@
 export const sum = (a, b) => {
   return a + b;
 };
-//1st
+
 /* Lets create a basic test case,a dummy testcase,lets not  write react t.c lets write small js t.c
  This above f(n) returns sum of 2 no.It will take sum of 2 no.and will return sum of 2 no.lets write testcases for this but where 
  let me tell u try to run this cmd npm run test,if u runthis it will give u a hint,it tries to say No tests found,
