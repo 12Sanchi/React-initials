@@ -41,11 +41,11 @@ it("Should change Login Button to Logout on click", () => {
     </BrowserRouter>
   );
 
-  const loginButton = screen.getAllByRole("button", { name: "Login " });
+  const loginButton = screen.getByRole("button", { name: "Login " });
 
   fireEvent.click(loginButton);
 
-  const logoutButton = screen.getAllByRole("button", { name: "Logout " });
+  const logoutButton = screen.getByRole("button", { name: "Logout " });
 
   expect(logoutButton).toBeInTheDocument();
 });
