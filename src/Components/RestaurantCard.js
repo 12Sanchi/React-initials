@@ -3,6 +3,8 @@ import { CDN_URL } from "../Utils/constant";
 const RestaurantCard = (props) => {
   const { resData } = props;
 
+  console.log(resData);
+
   // const styleCard = {
   // ,
   //};

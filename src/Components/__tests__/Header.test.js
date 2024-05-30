@@ -1,11 +1,25 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Header from "../Header";
-import appStore from "../../Utils/appStore";
 import { Provider } from "react-redux";
+import appStore from "../../Utils/appStore";
+import Header from "../Header";
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 
-it("Should render Header Component with a login button", () => {
+it("Should render Header Component with a login btn", () => {
+  render(
+    <BrowserRouter>
+      <Provider store={appStore}>
+        <Header />
+      </Provider>
+    </BrowserRouter>
+  );
+
+  const loginButton = screen.getByRole("button");
+
+  expect(loginButton).toBeInTheDocument();
+});
+
+it("Should render Header Component with a Cart item ", () => {
   render(
     <BrowserRouter>
       <Provider store={appStore}>
@@ -13,9 +27,10 @@ it("Should render Header Component with a login button", () => {
       </Provider>
     </BrowserRouter>
   );
-  const loginButton = screen.getByRole("button", { name: "Login " });
+  //const cartItems = screen.getByText("Cart - (1 items)");
+  const cartItems = screen.getByText("Cart - (1 items)");
 
-  expect(loginButton).toBeInTheDocument();
+  expect(cartItems).toBeInTheDocument();
 });
 
 it("Should render Header Component with a Cart item ", () => {
@@ -32,7 +47,38 @@ it("Should render Header Component with a Cart item ", () => {
   expect(cartItems).toBeInTheDocument();
 });
 
-it("Should change Login Button to Logout on click", () => {
+it("Should change Logi btn to Logout on click", () => {
+  render(
+    <BrowserRouter>
+      <Provider store={appStore}>
+        <Header />
+      </Provider>
+    </BrowserRouter>
+  );
+
+  const loginButton = screen.getByRole("button", { name: "Login" });
+
+  fireEvent.click(loginButton);
+
+  const logoutButton = screen.getByRole("button", { name: "Logout" });
+
+  expect(logoutButton).toBeInTheDocument();
+});
+
+/*it("Should render Header Component with a Login button", () => {
+  render(
+    <BrowserRouter>
+      <Provider store={appStore}>
+        <Header />;
+      </Provider>
+    </BrowserRouter>
+  );
+  const loginButton = screen.getByRole("button", { name: "Login " });
+
+  expect(loginButton).toBeInTheDocument();
+});*/
+
+/*it("Should change Login Button to Logout on click", () => {
   render(
     <BrowserRouter>
       <Provider store={appStore}>
@@ -48,7 +94,7 @@ it("Should change Login Button to Logout on click", () => {
   const logoutButton = screen.getByRole("button", { name: "Logout " });
 
   expect(logoutButton).toBeInTheDocument();
-});
+});*/
 
 //render something,query s.m,then assert s.m
 /*   After import render & Header & line it + render+npm run test shows error--could not find react-redux context value; please ensure the 
