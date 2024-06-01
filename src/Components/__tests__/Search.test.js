@@ -1,8 +1,9 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Body from "../Body";
 import MOCK_DATA from "../mocks/mockResListData.json";
 import { act } from "react-dom/test-utils";
-//import { act } from "react-dom/test-utils";
+import { BrowserRouter } from "react-router-dom";
+import "@testing-library/jest-dom";
 
 global.fetch = jest.fn(() => {
   return Promise.resolve({
@@ -13,7 +14,26 @@ global.fetch = jest.fn(() => {
 });
 
 it("Should render the Body component with Search ", async () => {
-  await act(async () => render(<Body />));
+  await act(async () =>
+    render(
+      <BrowserRouter>
+        <Body />
+      </BrowserRouter>
+    )
+  );
+  const searchBtn = screen.getByRole("button", { name: "Search" });
+
+  const searchInput = screen.getByTestId("searchInput");
+  //console.log(searchInput);
+  //console.log(searchBtn);
+  fireEvent.change(searchInput, { target: { value: "burger" } });
+
+  fireEvent.click(searchBtn);
+
+  const cards = screen.getAllByTestId("resCard");
+
+  expect(cards.length).toBe(4);
+  // expect(searchBtn).toBeInTheDocument();
 });
 
 /* we r going to test integration or conjunction of multi. comp.
@@ -63,4 +83,23 @@ PROMISE SO HERE I WILL ALSO HAVE TO RETUIN
     
     & when we  await this we have tomake this asnyc 
     u have to write your t.c c.back as async now when u write await act this act fn takes another fn which is again a async fn & this fn basically 
-     renders your body comp. now err comes-it cannot find link comp.-wrap it inside browser router  */
+     renders your body comp. now err comes-it cannot find link comp.-wrap it inside browser router
+     ----now lets something inside input box & test ,writibng inside uinput is a event in itself,this input has a ponchane event in itself
+      which is being triggered,so we will have to trigger that input box to change that input event 
+       so lets try to update the input box,so lets brought that input here,how will get that searchinput,i will getthat 
+       searchinput by screen,JEST GIVES US TO TEST BY TESTID 
+       
+       SUPPOSE IF getByRole is not working,by placeholder is not working, at the end of day 
+       getBytestId always works -----go to Body.js in input tag give it a data-testid ="searchInput"
+       do const searchIput+console+expect now i want to change the value of it after typed how to 
+       trigger that,u have to trigger a fireevent.change now what do u want to change and then 
+       paas an object,this obj is simulating what we get here in this e  in Body.js 
+        onChange={(e) => {
+              setSearchText(e.target.value);
+            }}     
+            this e is given by browser,here we dont have browser,here we r faking so many things,
+            this tym i want to give this e as target let me make that e,this target again has a value 
+            & that value is what we want to type inside that input for eg-as on going to foodpageas we type burger 
+            similr thing wil happen if ui will fire this changeevent + fireEvent.click now to expect some numbers of foodcards of 
+            burgers as these restauracard is nothing but a div, i can give a testid in RestauraCard.js 
+            as  data-testid = "resCard"  */
