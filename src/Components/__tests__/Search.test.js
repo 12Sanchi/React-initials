@@ -25,7 +25,7 @@ it("Should render the Body component with Search ", async () => {
 
   const searchInput = screen.getByTestId("searchInput");
   //console.log(searchInput);
-  //console.log(searchBtn);
+  console.log(searchBtn);
   fireEvent.change(searchInput, { target: { value: "burger" } });
 
   fireEvent.click(searchBtn);
@@ -33,7 +33,7 @@ it("Should render the Body component with Search ", async () => {
   //const cards = screen.getAllByTestId("resCard");
 
   // expect(cards.length).toBe(1);
-  //expect(searchBtn).toBeInTheDocument();
+  expect(searchBtn).toBeInTheDocument();
 });
 
 /* we r going to test integration or conjunction of multi. comp.

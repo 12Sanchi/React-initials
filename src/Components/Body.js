@@ -7,6 +7,7 @@ import UserContext from "../Utils/UserContext";
 
 const Body = () => {
   //Local State Variable -  Super powerful variable
+
   const [listOfRestaurants, setListOfRestaurant] = useState([]); //resObj
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
@@ -67,9 +68,10 @@ const Body = () => {
             className="px-4 py-2 bg-violet-300 m-4 rounded-lg"
             onClick={() => {
               console.log(searchText);
-              const filteredRestaurant = listOfRestaurants.filter((res) =>
+              const filteredRestaurant = data.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
+              //console.log("Body rendered", listOfRestaurants)    listOfRestaurants;
 
               setFilteredRestaurant(filteredRestaurant);
             }}
