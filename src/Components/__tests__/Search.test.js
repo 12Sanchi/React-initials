@@ -26,7 +26,7 @@ it("Should render the Body component with Search ", async () => {
 
   expect(cardsBeforeSearch.length).toBe(20);
 
-  /* const searchBtn = screen.getByRole("button", { name: "Search" });
+  const searchBtn = screen.getByRole("button", { name: "Search" });
 
   const searchInput = screen.getByTestId("searchInput");
   //console.log(searchInput);
@@ -36,10 +36,10 @@ it("Should render the Body component with Search ", async () => {
 
   fireEvent.click(searchBtn);
 
-  const cards = screen.getAllByTestId("resCard");
+  const cardsAfterSearch = screen.getAllByTestId("resCard");
 
-  expect(cards.length).toBe(1);
-  //expect(searchBtn).toBeInTheDocument();*/
+  expect(cardsAfterSearch.length).toBe(1);
+  //expect(searchBtn).toBeInTheDocument();
 });
 
 /* we r going to test integration or conjunction of multi. comp.

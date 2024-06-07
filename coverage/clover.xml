@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1717580541001" clover="3.2.0">
-  <project timestamp="1717580541001" name="All files">
-    <metrics statements="31" coveredstatements="20" conditionals="4" coveredconditionals="3" methods="10" coveredmethods="3" elements="45" coveredelements="26" complexity="0" loc="31" ncloc="31" packages="1" files="1" classes="1"/>
+<coverage generated="1717747245675" clover="3.2.0">
+  <project timestamp="1717747245675" name="All files">
+    <metrics statements="38" coveredstatements="27" conditionals="4" coveredconditionals="3" methods="12" coveredmethods="5" elements="54" coveredelements="35" complexity="0" loc="38" ncloc="38" packages="1" files="3" classes="3"/>
     <file name="Body.js" path="C:\Users\sanch\OneDrive\Desktop\Namaste React\src\Components\Body.js">
       <metrics statements="31" coveredstatements="20" conditionals="4" coveredconditionals="3" methods="10" coveredmethods="3"/>
       <line num="8" count="1" type="stmt"/>
@@ -35,6 +35,19 @@
       <line num="1451" count="0" type="stmt"/>
       <line num="1462" count="0" type="stmt"/>
       <line num="1468" count="0" type="stmt"/>
+    </file>
+    <file name="RestaurantCard.js" path="C:\Users\sanch\OneDrive\Desktop\Namaste React\src\Components\RestaurantCard.js">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+    </file>
+    <file name="sum.js" path="C:\Users\sanch\OneDrive\Desktop\Namaste React\src\Components\sum.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

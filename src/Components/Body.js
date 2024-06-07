@@ -1414,7 +1414,7 @@ const Body = () => {
   return listOfRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
+    <div className="body" data-testid="resCard">
       <div className="filter flex">
         <div className="search p-4 m-4">
           <input
